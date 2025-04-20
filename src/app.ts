@@ -3,6 +3,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
 import apiRouter from "./routes";
+import rateLimiter from "./middlewares/rateLimiter.middleware";
 
 const app: Express = express();
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+app.use(rateLimiter());
 
 // Routes
 app.use("/api/v1", apiRouter);

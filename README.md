@@ -6,6 +6,7 @@ A RESTful API built with Express.js and TypeScript, featuring Redis caching and 
 
 - Express.js with TypeScript
 - Redis caching implementation
+- Rate limiting with Redis
 - Docker and Docker Compose support
 - Health check endpoint
 - API error handling
@@ -35,8 +36,10 @@ npm install
 NODE_ENV=development
 PORT=3000
 REDIS_URI="redis://localhost:6379"
-EXTERNAL_API_BASE_URL="https://jsonplaceholder.typicode.com"
+EXTERNAL_API_BASE_URL="https://externalApiExample.com"
 DEFAULT_CACHE_TTL=300
+RATE_LIMIT_TTL=60
+RATE_LIMIT_MAX_REQUESTS=100
 ```
 
 ## Running the Application
@@ -57,6 +60,18 @@ npm start
 
 - **GET /api/v1/health** - Health check endpoint
 - **GET /api/v1/posts** - Get all posts
+
+## Rate Limiting
+
+The API implements rate limiting per IP address, method, and path combination. Rate limit headers are included in the response:
+
+- X-RateLimit-Limit : Maximum number of requests allowed
+- X-RateLimit-Remaining : Number of requests remaining in the current window
+- X-RateLimit-Reset : Time in seconds until the rate limit resets
+  When rate limit is exceeded, the API returns:
+
+- Status code: 429
+- Response: { "message": "Rate limit exceeded, try again later" }
 
 ## Project Structure
 
