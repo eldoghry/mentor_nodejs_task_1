@@ -1,0 +1,22 @@
+version: "3"
+services:
+  task-1-node-app:
+    container_name: task-1-node-app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app/:ro
+      # - /app/node_modules
+  redis-srv:
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_db:/data
+
+volumes:
+  redis_db:
+networks:
+  app_network:
+    driver: bridge
