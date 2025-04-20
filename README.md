@@ -60,6 +60,7 @@ npm start
 
 ## Project Structure
 
+`
 ├── src/
 │ ├── config/ # Configuration files
 │ ├── controllers/ # Route controllers
@@ -72,6 +73,9 @@ npm start
 ├── env/ # Environment variables
 ├── tests/ # Test files
 └── docker-compose.yml # Docker composition
+└── docker-compose.dev.yml # Docker composition
+
+`
 
 ## Docker Support
 
