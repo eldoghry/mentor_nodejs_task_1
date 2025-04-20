@@ -60,22 +60,22 @@ npm start
 
 ## Project Structure
 
-`
-├── src/
-│ ├── config/ # Configuration files
-│ ├── controllers/ # Route controllers
-│ ├── middlewares/ # Custom middleware
-│ ├── routes/ # API routes
-│ ├── services/ # Business logic
-│ ├── utils/ # Utility functions
-│ ├── app.ts # Express app setup
-│ └── server.ts # Server entry point
-├── env/ # Environment variables
-├── tests/ # Test files
-└── docker-compose.yml # Docker composition
-└── docker-compose.dev.yml # Docker composition
+```
+    ├── src/
+    │ ├── config/ # Configuration files
+    │ ├── controllers/ # Route controllers
+    │ ├── middlewares/ # Custom middleware
+    │ ├── routes/ # API routes
+    │ ├── services/ # Business logic
+    │ ├── utils/ # Utility functions
+    │ ├── app.ts # Express app setup
+    │ └── server.ts # Server entry point
+    ├── env/ # Environment variables
+    ├── tests/ # Test files
+    └── docker-compose.yml # Docker composition
+    └── docker-compose.dev.yml # Docker composition
 
-`
+```
 
 ## Docker Support
 
